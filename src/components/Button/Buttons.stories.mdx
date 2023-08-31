@@ -1,43 +1,58 @@
-import { Meta, Story } from "@storybook/addon-docs/blocks";
-import { boolean, text } from "@storybook/addon-knobs";
+import '../../app/globals.css';
+import { iconOptions } from '../../Mock/Mock';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import {
-    PrimaryButton,
-    SecondaryButton,
-    TertiaryButton,
-} from "./Buttons";
-import '../app/globals.css'
+import { PrimaryButton, SecondaryButton, TertiaryButton } from './Buttons';
 
-<Meta title="Design System|Buttons" component={PrimaryButton} />
+<Meta title="Buttons" component={PrimaryButton} />
 
-# Buttons
+Buttons
 
 Buttons are used to trigger actions within an application.
 
-## Usage
+Usage
 
 Buttons are used to trigger internal actions within your web applications.
 
-## Primary Buttons
+Primary Buttons
 
 Primary buttons are used as a call to action and indicate the most important action on a page.
 
 <Story name="Primary" component={PrimaryButton}>
-    <PrimaryButton onClick={action('button-click')} disabled={boolean("Disabled", false)}>{text('Button Title', 'Hello world')}</PrimaryButton>
+  <PrimaryButton
+    onClick={action('button-click')}
+    disabled={boolean('Disabled', false)}
+    icon={select('Icon', iconOptions, null)}
+  >
+    {text('Button Title', 'Hello world')}
+  </PrimaryButton>
 </Story>
 
-## Secondary Buttons
+Secondary Buttons
 
 Primary buttons are used as a call to action and indicate the most important action on a page.
 
 <Story name="Secondary" component={SecondaryButton}>
-    <SecondaryButton disabled={boolean("Disabled", false)}>{text('Button Title', 'Hello world')}</SecondaryButton>
+  <SecondaryButton
+    onClick={action('button-click')}
+    disabled={boolean('Disabled', false)}
+    icon={select('Icon', iconOptions, null)}
+  >
+    {text('Button Title', 'Hello world')}
+  </SecondaryButton>
 </Story>
 
-## Tertiary Buttons
+Tertiary Buttons
 
 Primary buttons are used as a call to action and indicate the most important action on a page.
 
 <Story name="Tertiary" component={TertiaryButton}>
-    <TertiaryButton disabled={boolean("Disabled", false)}>{text('Button Title', 'Hello world')}</TertiaryButton>
+  <TertiaryButton
+    onClick={action('button-click')}
+    disabled={boolean('Disabled', false)}
+    icon={select('Icon', iconOptions, null)}
+  >
+    {text('Button Title', 'Hello world')}
+  </TertiaryButton>
 </Story>

@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:storybook/recommended",
+    "./.eslintrc.stories.js"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "object-curly-spacing": ["error", "always"]
+    // Add any other rules that you want to enforce
+  }
 }

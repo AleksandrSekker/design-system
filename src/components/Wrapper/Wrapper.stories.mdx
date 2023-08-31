@@ -2,7 +2,7 @@ import '../../app/globals.css';
 import AvatarImage from '../AvatarImage/AvatarImage';
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import { text, number, boolean, select } from '@storybook/addon-knobs';
-import WrapperAnimationHoverButton from '../WrapperAnimation/WrapperAnimation';
+import { CardWrapper, WrapperAnimationHoverButton } from './Wrapper';
 import { PrimaryButton } from '../Button/Buttons';
 import { action } from '@storybook/addon-actions';
 import { iconOptions } from '../../Mock/Mock';
@@ -36,4 +36,24 @@ Button Animation
       {text('Button Title', 'Hello world')}
     </PrimaryButton>
   </WrapperAnimationHoverButton>
+</Story>
+
+Card Wrapper
+
+<Story name="Card Wrapper" component={CardWrapper}>
+  <CardWrapper>
+    <div className="m-auto">
+      <AvatarImage
+        image={text(
+          'Image URL',
+          'https://images.pexels.com/photos/6753871/pexels-photo-6753871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        )}
+        height={number('Height', 40)}
+        width={number('Width', 40)}
+      />
+    </div>
+    <div className="flex flex-col items-center justify-center">
+      <h3>{text('Title', 'Title')}</h3>
+    </div>
+    </CardWrapper>
 </Story>

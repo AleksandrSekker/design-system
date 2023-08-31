@@ -1,0 +1,20 @@
+import AvatarImage from './AvatarImage';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { text, number } from '@storybook/addon-knobs';
+
+<Meta title="Avatar Image" component={AvatarImage} />
+
+Avatar Image
+
+Avatar image with animation on hover
+
+<Story name="Avatar Image" component={AvatarImage}>
+  <AvatarImage
+    image={text(
+      'Image URL',
+      'https://images.pexels.com/photos/6753871/pexels-photo-6753871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    )}
+    height={number('Height', 200)}
+    width={number('Width', 200)}
+  />
+</Story>
