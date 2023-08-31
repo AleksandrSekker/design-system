@@ -1,0 +1,39 @@
+import '../../app/globals.css';
+import AvatarImage from '../AvatarImage/AvatarImage';
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { text, number, boolean, select } from '@storybook/addon-knobs';
+import WrapperAnimationHoverButton from '../WrapperAnimation/WrapperAnimation';
+import { PrimaryButton } from '../Button/Buttons';
+import { action } from '@storybook/addon-actions';
+import { iconOptions } from '../../Mock/Mock';
+
+<Meta title="Wrapper Animation" component={AvatarImage} />
+
+Avatar Image Animation
+
+<Story name="Avatar Image" component={WrapperAnimationHoverButton}>
+  <WrapperAnimationHoverButton>
+    <AvatarImage
+      image={text(
+        'Image URL',
+        'https://images.pexels.com/photos/6753871/pexels-photo-6753871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      )}
+      height={number('Height', 200)}
+      width={number('Width', 200)}
+    />
+  </WrapperAnimationHoverButton>
+</Story>
+
+Button Animation
+
+<Story name="Button Animation" component={WrapperAnimationHoverButton}>
+  <WrapperAnimationHoverButton>
+    <PrimaryButton
+      onClick={action('button-click')}
+      disabled={boolean('Disabled', false)}
+      icon={select('Icon', iconOptions, null)}
+    >
+      {text('Button Title', 'Hello world')}
+    </PrimaryButton>
+  </WrapperAnimationHoverButton>
+</Story>
