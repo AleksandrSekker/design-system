@@ -1,6 +1,6 @@
 import '../../app/globals.css';
-import { Meta, Story } from '@storybook/addon-docs/blocks';
-import { text, number, boolean, select } from '@storybook/addon-knobs';
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
+import { boolean, select } from '@storybook/addon-knobs';
 import Switch from "./Switch";
 import { themeOptions } from "../../Mock/Mock";
   import {
@@ -10,7 +10,7 @@ import { themeOptions } from "../../Mock/Mock";
 <Meta title="Switch" component={Switch} />
 
 Switch
-
 <Story name="Switch" component={Switch}>
-  <Switch enabled={boolean('Checked', false)} iconChecked={themeOptions.Moon} iconUnchecked={themeOptions.Sun} onChange={action('Switch Toggled')} />
+  <Switch enabled={boolean('Checked', false)} iconChecked={select('Checked icon', themeOptions, themeOptions.Moon)} iconUnchecked={select('Unchecked icon', themeOptions, themeOptions.Sun)} onChange={action('Switch Toggled')} />
 </Story>
+<ArgTypes of={Switch} />

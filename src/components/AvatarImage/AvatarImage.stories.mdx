@@ -1,5 +1,5 @@
 import AvatarImage from './AvatarImage';
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
 import { text, number } from '@storybook/addon-knobs';
 
 <Meta title="Avatar Image" component={AvatarImage} />
@@ -18,3 +18,4 @@ Avatar image with animation on hover
     width={number('Width', 200)}
   />
 </Story>
+<ArgTypes of={AvatarImage} />

@@ -1,0 +1,16 @@
+import '../../app/globals.css';
+
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
+import Modal from "./Modal";
+import {boolean, text} from "@storybook/addon-knobs";
+
+<Meta title="Modal" component={Modal} />
+
+Modal
+
+<Story name="Modal" component={Modal}>
+    <Modal title={text('Button Title', 'Hello world')} closeModal={() => {}} isOpen={boolean('isOpen', true)} >
+        <p>Modal content</p>
+    </Modal>
+</Story>
+<ArgTypes of={Modal} />

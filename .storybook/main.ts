@@ -9,7 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
       '@storybook/addon-knobs',
       '@storybook/addon-docs',
-      '@storybook/addon-actions'
+      '@storybook/addon-actions',
 
   ],
   framework: {

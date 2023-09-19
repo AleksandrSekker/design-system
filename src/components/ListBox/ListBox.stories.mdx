@@ -1,0 +1,25 @@
+import '../../app/globals.css';
+import { ListBox } from "./ListBox";
+import {Meta} from "@storybook/blocks";
+import {
+    ArgTypes,
+    Story
+} from "@storybook/addon-docs/blocks";
+import { text, select } from '@storybook/addon-knobs';
+import {optionsSort} from "../../Mock/Mock";
+
+<Meta title="ListBox" component={ListBox} />
+
+ListBox
+
+<Story name="ListBox" component={ListBox}>
+    <ListBox
+        options={optionsSort}
+        currentOption={select('Current Option', optionsSort, optionsSort[0])}
+        handleSelectOption={(option) => {
+            console.log(`Selected option: ${option.label}`);
+        }}
+        label={text('Label', 'Sort by')}
+    />
+</Story>
+<ArgTypes of={ListBox} />

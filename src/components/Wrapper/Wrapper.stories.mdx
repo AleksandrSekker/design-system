@@ -1,6 +1,6 @@
 import '../../app/globals.css';
 import AvatarImage from '../AvatarImage/AvatarImage';
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
 import { text, number, boolean, select } from '@storybook/addon-knobs';
 import { CardWrapper, WrapperAnimationHoverButton } from './Wrapper';
 import { PrimaryButton } from '../Button/Buttons';
@@ -37,6 +37,7 @@ Button Animation
     </PrimaryButton>
   </WrapperAnimationHoverButton>
 </Story>
+<ArgTypes of={WrapperAnimationHoverButton} />
 
 Card Wrapper
 
@@ -57,3 +58,4 @@ Card Wrapper
     </div>
     </CardWrapper>
 </Story>
+<ArgTypes of={CardWrapper} />

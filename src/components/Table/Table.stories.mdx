@@ -1,0 +1,14 @@
+import '../../app/globals.css';
+
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
+ import Table from "./Table";
+ import {tableData, tableHeaders} from "../../Mock/Mock";
+
+<Meta title="Table" component={Table} />
+
+Pagination
+
+<Story name="Table" component={Table}>
+    <Table data={tableData} headers={tableHeaders} />
+</Story>
+<ArgTypes of={Table} />

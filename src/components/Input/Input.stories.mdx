@@ -1,0 +1,13 @@
+import '../../app/globals.css';
+
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
+import { text } from "@storybook/addon-knobs"; import Input from "./Input";
+
+<Meta title="Input" component={Input} />
+
+Input
+
+<Story name="Pagination" component={Input}>
+    <Input onChange={() => {}} name={text('title', 'title')} errors={text('error', '')} type={text("type", 'text')} title={text('title', 'Title')} value={text('value', '')} placeholder={text('placeholder', 'Type value')} />
+</Story>
+<ArgTypes of={Input} />

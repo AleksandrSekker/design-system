@@ -1,0 +1,14 @@
+import '../../app/globals.css';
+
+import {ArgTypes, Meta, Story} from '@storybook/addon-docs/blocks';
+import Pagination from "./Pagination";
+import { number } from "@storybook/addon-knobs";
+
+<Meta title="Pagination" component={Pagination} />
+
+Pagination
+
+<Story name="Pagination" component={Pagination}>
+    <Pagination totalPages={number('total', 10)} currentPage={number('currentPage', 1)}  onPageChange={() => {}} />
+</Story>
+<ArgTypes of={Pagination} />

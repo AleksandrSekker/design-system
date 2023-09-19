@@ -1,58 +1,82 @@
 import '../../app/globals.css';
 import { iconOptions } from '../../Mock/Mock';
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import {ArgTypes, Meta, Source, Story} from '@storybook/addon-docs/blocks';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { PrimaryButton, SecondaryButton, TertiaryButton } from './Buttons';
+import { PrimaryButton, SecondaryButton, TertiaryButton, Button } from './Buttons';
 
-<Meta title="Buttons" component={PrimaryButton} />
-
-Buttons
-
-Buttons are used to trigger actions within an application.
-
-Usage
-
-Buttons are used to trigger internal actions within your web applications.
-
-Primary Buttons
-
-Primary buttons are used as a call to action and indicate the most important action on a page.
+<Meta title="Buttons" component={Button} />
+<ArgTypes of={PrimaryButton} />
 
 <Story name="Primary" component={PrimaryButton}>
   <PrimaryButton
     onClick={action('button-click')}
     disabled={boolean('Disabled', false)}
     icon={select('Icon', iconOptions, null)}
+    color={select('Color', ['blue', 'red', 'green'], 'blue')}
+    size={select('Size', ['xs', 'sm', 'md', 'lg', 'xl'], 'md')}
   >
     {text('Button Title', 'Hello world')}
   </PrimaryButton>
+    <Source
+        code={`
+<PrimaryButton
+    onClick={() => {}}
+    disabled={false}
+    icon={iconOptions[0]}
+    color='blue'
+    size={'md'}
+>
+    Title
+</PrimaryButton>`}
+    />
 </Story>
 
-Secondary Buttons
-
-Primary buttons are used as a call to action and indicate the most important action on a page.
 
 <Story name="Secondary" component={SecondaryButton}>
   <SecondaryButton
     onClick={action('button-click')}
     disabled={boolean('Disabled', false)}
     icon={select('Icon', iconOptions, null)}
+    size={select('Size', ['xs', 'sm', 'md', 'lg', 'xl'], 'md')}
+    color={select('Color', ['blue', 'red', 'green'], 'blue')}
   >
     {text('Button Title', 'Hello world')}
   </SecondaryButton>
+    <Source
+        code={`
+<SecondaryButton
+    onClick={() => {}}
+    disabled={false}
+    icon={iconOptions[0]}
+    color='blue'
+    size={'md'}
+>
+    Title
+</SecondaryButton>`}
+    />
 </Story>
-
-Tertiary Buttons
-
-Primary buttons are used as a call to action and indicate the most important action on a page.
 
 <Story name="Tertiary" component={TertiaryButton}>
   <TertiaryButton
     onClick={action('button-click')}
     disabled={boolean('Disabled', false)}
     icon={select('Icon', iconOptions, null)}
+    size={select('Size', ['xs', 'sm', 'md', 'lg', 'xl'], 'md')}
+    color={select('Color', ['blue', 'red', 'green'], 'blue')}
   >
     {text('Button Title', 'Hello world')}
   </TertiaryButton>
+    <Source
+        code={`
+<TertiaryButton
+    onClick={() => {}}
+    disabled={false}
+    icon={iconOptions[0]}
+    color='blue'
+    size={'md'}
+>
+    Title
+</TertiaryButton>`}
+    />
 </Story>
